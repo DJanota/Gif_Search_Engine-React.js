@@ -1,6 +1,6 @@
 body {
-    display: flex;
     justify-content: center;
-    height: 100vh;
-    background-color: #c7c3c3;
+    background-color: #000;
+    color: #fff;
+    margin-top: 50px;
 }

@@ -10,11 +10,11 @@ App = React.createClass({
         };
     },
 
-    handleSearch: function(searchingText) {
+    handleSearch: function (searchingText) {
         this.setState({
-            loading: true  // 2.
+            loading: true // 2.
         });
-        this.getGif(searchingText, function(gif) {
+        this.getGif(searchingText, function (gif) {
             this.setState({
                 loading: false,
                 gif: gif,
@@ -23,16 +23,16 @@ App = React.createClass({
         }.bind(this));
     },
 
-    getGif: function(searchingText, callback) {
+    getGif: function (searchingText, callback) {
         var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
-        xhr.onload = function() {
+        xhr.onload = function () {
             if (xhr.status === 200) {
                 var data = JSON.parse(xhr.responseText).data;
                 var gif = {};
 
-                if(data.length !== 0) {
+                if (data.length !== 0) {
                     gif = {
                         url: data.fixed_width_downsampled_url,
                         sourceUrl: data.url,
@@ -49,21 +49,37 @@ App = React.createClass({
         xhr.send();
     },
 
-    render: function() {
+    render: function () {
 
         var styles = {
             margin: '0 auto',
             textAlign: 'center',
-            width: '90%'
+            width: '100%',
+            height: '100%',
         };
 
-        return (
-          <div style={styles}>
-                <h1>Wyszukiwarka GIFow!</h1>
-                <p>Znajdź gifa na <a href='http://giphy.com'>giphy</a>. Naciskaj enter, aby pobrać kolejne gify.</p>
-                <Search onSearch={this.handleSearch} />
-                <Gif loading={this.state.loading} url={this.state.gif.url} sourceUrl={this.state.gif.sourceUrl} />
-          </div>
+        return ( <
+            div style = {
+                styles
+            } >
+            <
+            h1 > GIFs SEARCH ENGINE! < /h1> <
+            p > Find the gif at < a href = 'http://giphy.com' > giphy.com < /a>.</p > < p > Press enter to download more gifs. < /p> <
+            Search onSearch = {
+                this.handleSearch
+            }
+            /> <
+            Gif loading = {
+                this.state.loading
+            }
+            url = {
+                this.state.gif.url
+            }
+            sourceUrl = {
+                this.state.gif.sourceUrl
+            }
+            /> < /
+            div >
         );
     }
 });
