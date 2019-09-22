@@ -38,4 +38,3 @@ Gif = React.createClass({
         );
     }
 });
-.
