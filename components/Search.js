@@ -49,4 +49,3 @@ Search = React.createClass({
         />
     }
 });
-.
