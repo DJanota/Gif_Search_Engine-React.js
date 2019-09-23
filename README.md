@@ -10,4 +10,4 @@ Github-link: https://djanota.github.io/Gifs_Search_Engine-React.js/
 
 Technologie: HTML5, CSS3, JavaScript, React.js.
 
-Github-link: https://djanota.github.io/Gifs_Search_Engine-React.js/
+Link: https://djanota.github.io/Gifs_Search_Engine-React.js/
