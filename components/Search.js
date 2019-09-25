@@ -28,7 +28,6 @@ Search = React.createClass({
             fontSize: '1.5em',
             width: '100%',
             maxWidth: '350px',
-            minWidth: '200px',
             padding: '10px',
         };
 
